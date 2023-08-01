@@ -15,9 +15,15 @@
                     @endif
 
                     Вы успешно вошли!
-
-                    <a href="{{ route('index') }}">На главную</a><br/>
-                    <a href="{{ route('admin.main.index') }}">Личный кабинет</a>
+                        @if(auth()->user()->role === \App\Models\User::ROLE_ADMIN)
+                            <a href="{{ route('admin.main.index') }}">Личный кабинет</a>
+                        @endif
+                        @if(auth()->user()->role === \App\Models\User::ROLE_MODERATOR)
+                            <a href="{{ route('moderator.main.index') }}">Личный кабинет</a>
+                        @endif
+                        @if(auth()->user()->role === \App\Models\User::ROLE_READER)
+                            <a href="{{ route('reader.main.index') }}">Личный кабинет</a>
+                        @endif
                 </div>
             </div>
         </div>
