@@ -16,7 +16,8 @@
 
                     Вы успешно вошли!
 
-                    <a href="{{ route('index') }}">На главную</a>
+                    <a href="{{ route('index') }}">На главную</a><br/>
+                    <a href="{{ route('admin.main.index') }}">Личный кабинет</a>
                 </div>
             </div>
         </div>
